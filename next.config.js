@@ -2,12 +2,6 @@ const { withStoreConfig } = require("./store-config")
 const store = require("./store.config.json")
 
 module.exports = withStoreConfig({
-  experimental: {
-    serverComponentsExternalPackages: [
-      "@medusajs/product",
-      "@medusajs/modules-sdk",
-    ],
-  },
   features: store.features,
   reactStrictMode: true,
   images: {
@@ -16,6 +10,11 @@ module.exports = withStoreConfig({
         protocol: "http",
         hostname: "localhost",
       },
+      // Uncomment below and replace image hostname with your own:
+      // {
+      //   protocol: "https",
+      //   hostname: "minio.example.com",
+      // },
       {
         protocol: "https",
         hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
